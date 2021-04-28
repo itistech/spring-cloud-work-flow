@@ -5,6 +5,20 @@ Spring Cloud Data Flow with Kafka-binder
 
 - A flow that receives an event from an input, perform some action(s) and send the result to an output.
 - The inputs are the **Source**, the outputs are the **Sink** and then we have the **Processor** that consumes the data and returns it to the output. 
+- For this specific problem, please see the technical design as below
+
+**Producer**
+Source of the trades coming to the system for processing
+
+**Processor**
+Process and validates the trades and send them to kafka topic. In case of validation fail system still send the trades to Kafka topic.
+
+**SINK/Consumer**
+Store the Trade data to respective system and sent to downstreams.
+
+
+![image](https://user-images.githubusercontent.com/36263824/116428102-3be42180-a862-11eb-9e56-869073ca705e.png)
+
 
 
 **TradeParallelProcessorImpl** output the following - 
@@ -13,3 +27,5 @@ Spring Cloud Data Flow with Kafka-binder
 - No of trades processed per milliseconds = 17741
 - Total No Of Trades Processed count = 39600000
 - Faulty Trade count = 13200000
+
+

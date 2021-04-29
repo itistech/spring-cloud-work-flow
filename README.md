@@ -1,7 +1,12 @@
 # spring-cloud-work-flow
 
+**Problem Statement:**
 
-Spring Cloud Data Flow with Kafka-binder
+Application receives transaction file every day from various clients. These transaction files contain high volume of data for processing. Since the transaction can be relating to settlement or cash transfer, they are time sensitive and needs to be process on certain time window.
+
+**Solution:**
+
+Spring Cloud Data Flow with Kafka-binder is used for the solutioning. 
 
 - A flow that receives an event from an input, perform some action(s) and send the result to an output.
 - The inputs are the **Source**, the outputs are the **Sink** and then we have the **Processor** that consumes the data and returns it to the output. 
